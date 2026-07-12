@@ -1,0 +1,54 @@
+project:
+  name: "Vision-Driven Global Supply Chain Intelligence"
+  version: "1.0.0"
+
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  data_synthetic: "data/synthetic"
+  models: "models"
+  mlflow_uri: "mlruns"
+  feature_store: "data/feature_store"
+
+spark:
+  app_name: "SupplyChainStreaming"
+  master: "local[*]"
+  checkpoint_dir: "data/checkpoints"
+
+database:
+  url: "sqlite:///data/enterprise.db"
+  echo: false
+
+video:
+  fps: 15
+  frame_width: 640
+  frame_height: 480
+  warehouse_cameras: ["bay_1", "bay_2", "loading_dock"]
+
+vision:
+  yolo_model: "yolov8n.pt"
+  vit_model: "google/vit-base-patch16-224-in21k"
+  sam_model: "facebook/sam-vit-base"
+  confidence_threshold: 0.5
+
+ml:
+  target_column: "price_usd"
+  test_size: 0.2
+  random_state: 42
+  n_folds: 5
+  optuna_trials: 20
+  smote_ratio: 0.5
+
+forecasting:
+  horizon_days: 30
+  regions: ["NA", "EU", "APAC", "LATAM"]
+
+mlops:
+  experiment_name: "supply_chain_forecasting"
+  wandb_project: "supply-chain-intelligence"
+  drift_threshold: 0.15
+
+serving:
+  host: "0.0.0.0"
+  port: 7860
+  api_port: 8000

@@ -1,0 +1,1 @@
+{"boxes": [{"label": "drum", "bbox": [120, 73, 243, 220]}, {"label": "crate", "bbox": [301, 246, 422, 317]}, {"label": "drum", "bbox": [225, 142, 306, 285]}], "camera": "bay_2"}
