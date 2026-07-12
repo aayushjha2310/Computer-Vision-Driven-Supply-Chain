@@ -1,0 +1,113 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: supply-chain-api
+  labels:
+    app: supply-chain-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: supply-chain-api
+  template:
+    metadata:
+      labels:
+        app: supply-chain-api
+    spec:
+      containers:
+        - name: inference-api
+          image: supply-chain-intelligence:latest
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+          volumeMounts:
+            - name: models
+              mountPath: /app/models
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+      volumes:
+        - name: models
+          persistentVolumeClaim:
+            claimName: model-storage
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: supply-chain-api-service
+spec:
+  selector:
+    app: supply-chain-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: supply-chain-gradio
+  labels:
+    app: supply-chain-gradio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: supply-chain-gradio
+  template:
+    metadata:
+      labels:
+        app: supply-chain-gradio
+    spec:
+      containers:
+        - name: gradio-ui
+          image: supply-chain-gradio:latest
+          ports:
+            - containerPort: 7860
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "4Gi"
+              cpu: "2000m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: supply-chain-gradio-service
+spec:
+  selector:
+    app: supply-chain-gradio
+  ports:
+    - protocol: TCP
+      port: 7860
+      targetPort: 7860
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: model-storage
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
