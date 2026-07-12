@@ -543,3 +543,122 @@ Edit `config/settings.yaml` for Spark, ML, vision model, and serving parameters.
 ```bash
 python -m pytest tests/ -v
 ```
+
+
+
+## Data Engineering & Processing
+
+* Pandas: Tabular data manipulation and analysis.
+* NumPy: Multidimensional array processing and vectorization.
+* Polars: High-speed, multi-threaded data frames.
+* Apache Spark: Distributed big data processing.
+* Dask: Parallel computing for large datasets.
+* Scrapy: Web scraping and data extraction.
+* SQLAlchemy: Database Object-Relational Mapping (ORM).
+* Parquet: Columnar data storage file format.
+* Feature Store: Managing reusable ML features.
+* Data Cleaning: Handling missing values and outliers. [6, 7, 8, 9, 10] 
+
+## Classical Machine Learning
+
+* Scikit-learn: Mainstream classical ML framework.
+* XGBoost: Gradient boosted decision trees algorithm.
+* LightGBM: Fast, distributed gradient boosting framework.
+* CatBoost: Categorical features gradient boosting library.
+* Supervised Learning: Classification and regression model training.
+* Unsupervised Learning: K-Means clustering and PCA.
+* Feature Engineering: One-hot encoding and scaling.
+* Hyperparameter Tuning: Grid search and Optuna optimization.
+* Cross-Validation: K-Fold model validation techniques.
+* Imbalanced Data: SMOTE and class-weight techniques. [11, 12, 13, 14, 15] 
+
+## Deep Learning Foundations
+
+* PyTorch: Dynamic graph deep learning framework.
+* TensorFlow: Production-grade neural network framework.
+* Keras: High-level deep learning API.
+* TensorBoard: Deep learning training visualization tool.
+* CNNs: Convolutional Neural Networks for vision.
+* RNNs/LSTMs: Recurrent networks for sequential data.
+* Transformers: Attention-based sequence-to-sequence neural architectures.
+* Backpropagation: Gradient-based neural network weight updates.
+* Loss Functions: Cross-entropy and Mean Squared Error.
+* Optimizers: Adam, SGD, and RMSprop algorithms. [16, 17, 18, 19, 20] 
+
+## Computer Vision & Audio
+
+* OpenCV: Real-time image and video processing.
+* Pillow (PIL): Basic Python image manipulation library.
+* YOLO: Real-time object detection framework family.
+* Hugging Face ViT: Vision Transformer model implementations.
+* Diffusers: Library for diffusion-based image generation.
+* Librosa: Audio and music feature analysis.
+* Whisper: OpenAI automatic speech recognition model.
+* Image Segmentation: Pixel-level mask generation (e.g., SAM).
+* Data Augmentation: Albumentations library for image transformations.
+* OCR: Optical Character Recognition via Tesseract. [21, 22] 
+
+## Natural Language Processing (NLP)
+
+* SpaCy: Industrial-strength natural language processing library.
+* NLTK: Natural Language Toolkit for text.
+* Hugging Face Transformers: Pre-trained transformer model hub.
+* Tokenization: Subword, BPE, and WordPiece tokenizers.
+* Embeddings: Vector representations via Word2Vec/BERT.
+* NER: Named Entity Recognition extraction techniques.
+* Text Classification: Sentiment analysis and topic modeling.
+* Sentence-Transformers: Generating semantic text similarity embeddings.
+* Regex: Advanced text pattern matching strings.
+* LLM APIs: Interfacing OpenAI, Anthropic, and Gemini. [23, 24, 25, 26, 27] 
+
+## Generative AI & Vector Search
+
+* Prompt Engineering: Few-shot, Chain-of-Thought, and ReAct.
+* Pinecone: Fully managed cloud vector database.
+* Milvus: Open-source distributed vector search database.
+* Qdrant: High-performance rust-based vector database.
+* Chroma: Lightweight, open-source embedded vector database.
+* FAISS: Facebook AI Similarity Search library.
+* Semantic Search: Context-based vector embedding retrieval.
+* RAG: Retrieval-Augmented Generation context plumbing.
+* Context Windows: Chunking strategy and overlap optimization.
+* Reranking: Cohere Rerank for document filtering. [28, 29, 30] 
+
+## Agentic AI Frameworks & Architecture
+
+* LangChain: LLM application and chain framework.
+* LangGraph: Cyclic, graph-based multi-agent workflow orchestrator.
+* CrewAI: Role-based multi-agent collaboration development framework.
+* AutoGen: Conversational multi-agent framework by Microsoft.
+* LlamaIndex: Data ingestion and agentic RAG.
+* Function Calling: LLM tool execution structure parsing.
+* State Management: Persisting agent memory across turns.
+* Agent Memory: Short-term, long-term, and episodic.
+* Self-Reflection: Loop structures for error self-correction.
+* Human-in-the-Loop: Interrupting autonomous steps for authorization. [31, 32, 33, 34] 
+
+## MLOps & LLMOps Infrastructure
+
+* Docker: Containerization tool for environment reproducibility.
+* Kubernetes: Container orchestration for scaling models.
+* MLflow: Experiment tracking and model registry.
+* Weights & Biases: ML training run monitoring platform.
+* Langfuse: Open-source LLM engineering and tracing.
+* Phoenix (Arize): LLM evaluation and RAG troubleshooting.
+* Trulens: RAG triad evaluation and tracking.
+* vLLM: High-throughput LLM serving engine framework.
+* Ollama: Local LLM runner and management.
+* FastAPI: Building high-performance APIs for inference. [35, 36, 37, 38, 39] 
+
+## Model Optimization, Edge & Deployment
+
+* Quantization: Reducing precision (FP16, INT8, GGUF).
+* LoRA/QLoRA: Low-Rank Adaptation for parameter-efficient tuning.
+* ONNX: Open Neural Network Exchange format.
+* TensorRT: NVIDIA hardware-specific deep learning inference engine.
+* AWS SageMaker: Cloud machine learning platform service.
+* Hugging Face Spaces: Instant ML application demo hosting.
+* Streamlit: Python web app building for prototypes.
+* Gradio: UI library for quick model testing.
+* CI/CD for ML: Automated testing with GitHub Actions.
+* Model Drift: Monitoring feature and prediction changes. [40, 41, 42, 43, 44]
