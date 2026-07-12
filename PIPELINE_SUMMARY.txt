@@ -1,0 +1,51 @@
+Pipeline Run Export — 20260712_091544 UTC
+Status: success
+
+TEXT OUTPUTS (project root):
+  - PIPELINE_REPORT.json
+  - PIPELINE_REPORT.txt
+  - PIPELINE_SUMMARY.txt
+
+GENERATED CHARTS (5 files):
+  - 01_model_rmse_comparison.png
+  - 02_fraud_detection_f1.png
+  - 03_regional_revenue.png
+  - 04_fraud_defect_by_region.png
+  - 05_damage_inspection_ratios.png
+
+VISUAL ARTIFACTS (31 files):
+  - damage_warehouse_frame_0000.jpg
+  - damage_warehouse_frame_0001.jpg
+  - damage_warehouse_frame_0002.jpg
+  - warehouse_frame_0000.jpg
+  - warehouse_frame_0001.jpg
+  - warehouse_frame_0002.jpg
+  - warehouse_frame_0003.jpg
+  - warehouse_frame_0004.jpg
+  - warehouse_frame_0005.jpg
+  - warehouse_frame_0006.jpg
+  - warehouse_frame_0007.jpg
+  - warehouse_frame_0008.jpg
+  - warehouse_frame_0009.jpg
+  - warehouse_feed.mp4
+  - annotated_warehouse_frame_0000.jpg
+  - annotated_warehouse_frame_0001.jpg
+  - annotated_warehouse_frame_0002.jpg
+  - annotated_warehouse_frame_0003.jpg
+  - annotated_warehouse_frame_0004.jpg
+  - damaged_package_000.png
+  - damaged_package_001.png
+  - hazmat_leak_000.png
+  - hazmat_leak_001.png
+  - mislabeled_crate_000.png
+  - mislabeled_crate_001.png
+  - overstacked_pallet_000.png
+  - overstacked_pallet_001.png
+  - spilled_contents_000.png
+  - spilled_contents_001.png
+  - temperature_breach_000.png
+  ... and 1 more
+
+KEY METRICS:
+  Best price model : lightgbm
+  Optuna best RMSE : 21481.9038

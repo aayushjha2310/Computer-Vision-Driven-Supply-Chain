@@ -1,0 +1,276 @@
+========================================================================
+  VISION-DRIVEN GLOBAL SUPPLY CHAIN INTELLIGENCE — PIPELINE REPORT
+========================================================================
+Status       : SUCCESS
+Started      : 2026-07-12T09:13:26.093333
+Completed    : 2026-07-12T09:15:44.985831
+
+------------------------------------------------------------------------
+STAGE: DATA INGESTION
+------------------------------------------------------------------------
+{
+  "transactions": 5000,
+  "parquet_path": "C:\\Users\\2000149350\\Documents\\Project-4\\data\\processed\\transactions",
+  "joined_rows": 5000,
+  "regional_summary": [
+    {
+      "region": "APAC",
+      "txn_count": 1237,
+      "total_revenue": 164383280.97999993,
+      "avg_price": 132888.6669199676,
+      "fraud_count": 29,
+      "defect_count": 39
+    },
+    {
+      "region": "EU",
+      "txn_count": 1196,
+      "total_revenue": 149193806.36999992,
+      "avg_price": 124743.98525919726,
+      "fraud_count": 16,
+      "defect_count": 36
+    },
+    {
+      "region": "LATAM",
+      "txn_count": 1300,
+      "total_revenue": 197925051.36000016,
+      "avg_price": 152250.03950769245,
+      "fraud_count": 26,
+      "defect_count": 37
+    },
+    {
+      "region": "NA",
+      "txn_count": 1267,
+      "total_revenue": 140755629.3599999,
+      "avg_price": 111093.63011838982,
+      "fraud_count": 33,
+      "defect_count": 40
+    }
+  ],
+  "spark_aggregated_rows": 20,
+  "stream_output": "C:\\Users\\2000149350\\Documents\\Project-4\\data\\processed\\stream_aggregated",
+  "sample_images": 10,
+  "sample_video": "C:\\Users\\2000149350\\Documents\\Project-4\\data\\raw\\warehouse_feed.mp4"
+}
+
+------------------------------------------------------------------------
+STAGE: FEATURE ENGINEERING
+------------------------------------------------------------------------
+{
+  "enriched_features": 34,
+  "market_clusters": 4,
+  "pca_components": 3,
+  "feature_groups": [
+    "transaction_features",
+    "market_features"
+  ]
+}
+
+------------------------------------------------------------------------
+STAGE: ML TRAINING
+------------------------------------------------------------------------
+{
+  "regression_results": {
+    "xgboost": {
+      "rmse": 19818.9865,
+      "mae": 9898.5215,
+      "r2": 0.9864,
+      "cv_rmse_mean": 20826.336,
+      "cv_rmse_std": 6890.0305
+    },
+    "lightgbm": {
+      "rmse": 19379.1344,
+      "mae": 10142.8091,
+      "r2": 0.987,
+      "cv_rmse_mean": 21994.4332,
+      "cv_rmse_std": 6082.508
+    },
+    "catboost": {
+      "rmse": 24543.9808,
+      "mae": 13440.7266,
+      "r2": 0.9792,
+      "cv_rmse_mean": 26468.6735,
+      "cv_rmse_std": 8765.3423
+    }
+  },
+  "best_model": "lightgbm",
+  "fraud_detection": {
+    "xgboost": {
+      "accuracy": 0.972,
+      "f1": 0.9664852791878172,
+      "roc_auc": 0.49068534461792884
+    },
+    "lightgbm": {
+      "accuracy": 0.979,
+      "f1": 0.9686114199090449,
+      "roc_auc": 0.5199669244613065
+    },
+    "catboost": {
+      "accuracy": 0.979,
+      "f1": 0.9686114199090449,
+      "roc_auc": 0.5247336932730191
+    }
+  },
+  "optuna_best_params": {
+    "n_estimators": 104,
+    "max_depth": 5,
+    "learning_rate": 0.22305998640121621,
+    "subsample": 0.6807551578961767,
+    "colsample_bytree": 0.9203521746602158
+  },
+  "optuna_best_rmse": 21481.9038,
+  "fraud_smote": {
+    "class_0": 4896,
+    "class_1": 208
+  },
+  "forecast_regions": [
+    "LATAM",
+    "NA",
+    "EU",
+    "APAC"
+  ],
+  "mlflow_run_id": "d330c3dc04214e60b84e577cdff07b38"
+}
+
+------------------------------------------------------------------------
+STAGE: COMPUTER VISION
+------------------------------------------------------------------------
+{
+  "frames_processed": 3,
+  "motion_vectors": 29,
+  "inventory_snapshot": {
+    "object_count": 1,
+    "objects": [
+      {
+        "bbox": [
+          319,
+          212,
+          434,
+          313
+        ],
+        "area": 11386.0
+      }
+    ],
+    "frame_shape": [
+      480,
+      640,
+      3
+    ]
+  },
+  "yolo_annotated": 5,
+  "video_tracks": {
+    "pallet": 30
+  },
+  "classifications": [
+    {
+      "primary_category": "food",
+      "confidence": 0.65,
+      "all_labels": [
+        {
+          "label": "food",
+          "confidence": 0.65
+        },
+        {
+          "label": "electronics",
+          "confidence": 0.7
+        }
+      ],
+      "is_hazmat": false,
+      "is_fragile": false
+    },
+    {
+      "primary_category": "food",
+      "confidence": 0.65,
+      "all_labels": [
+        {
+          "label": "food",
+          "confidence": 0.65
+        },
+        {
+          "label": "electronics",
+          "confidence": 0.7
+        }
+      ],
+      "is_hazmat": false,
+      "is_fragile": false
+    },
+    {
+      "primary_category": "food",
+      "confidence": 0.65,
+      "all_labels": [
+        {
+          "label": "food",
+          "confidence": 0.65
+        },
+        {
+          "label": "electronics",
+          "confidence": 0.7
+        }
+      ],
+      "is_hazmat": false,
+      "is_fragile": false
+    },
+    {
+      "primary_category": "food",
+      "confidence": 0.65,
+      "all_labels": [
+        {
+          "label": "food",
+          "confidence": 0.65
+        },
+        {
+          "label": "electronics",
+          "confidence": 0.7
+        }
+      ],
+      "is_hazmat": false,
+      "is_fragile": false
+    },
+    {
+      "primary_category": "food",
+      "confidence": 0.65,
+      "all_labels": [
+        {
+          "label": "food",
+          "confidence": 0.65
+        },
+        {
+          "label": "electronics",
+          "confidence": 0.7
+        }
+      ],
+      "is_hazmat": false,
+      "is_fragile": false
+    }
+  ],
+  "damage_inspections": [
+    {
+      "file": "C:\\Users\\2000149350\\Documents\\Project-4\\data\\raw\\warehouse_frame_0000.jpg",
+      "damage_ratio": 0.019482421875
+    },
+    {
+      "file": "C:\\Users\\2000149350\\Documents\\Project-4\\data\\raw\\warehouse_frame_0001.jpg",
+      "damage_ratio": 0.015305989583333334
+    },
+    {
+      "file": "C:\\Users\\2000149350\\Documents\\Project-4\\data\\raw\\warehouse_frame_0002.jpg",
+      "damage_ratio": 0.015677083333333335
+    }
+  ],
+  "synthetic_images": 12,
+  "augmented_samples": 6
+}
+
+------------------------------------------------------------------------
+STAGE: MLOPS
+------------------------------------------------------------------------
+{
+  "drift_detected": false,
+  "n_features_drifted": 0,
+  "prediction_drift": "False",
+  "drift_report": "=== Model Drift Report ===\nFeatures drifted: 0/8\n  [OK] quantity: KS=0.0220, shift=0.0201\n  [OK] unit_cost: KS=0.0278, shift=0.0261\n  [OK] shipping_days: KS=0.0390, shift=0.0616\n  [OK] market_index: KS=0.0312, shift=0.0030\n  [OK] region_encoded: KS=0.0046, shift=0.0102\n  [OK] category_encoded: KS=0.0124, shift=0.0151\n  [OK] log_quantity: KS=0.0220, shift=0.0060\n  [OK] cost_ratio: KS=0.0170, shift=0.0260\nPredictions [OK]: KS=0.0225",
+  "onnx_export": "C:\\Users\\2000149350\\Documents\\Project-4\\models\\price_forecast.onnx",
+  "onnx_valid": false,
+  "tensorrt_config": "C:\\Users\\2000149350\\Documents\\Project-4\\models\\price_forecast.trt",
+  "sagemaker_ready": true,
+  "model_pickle": "C:\\Users\\2000149350\\Documents\\Project-4\\models\\best_price_model.pkl"
+}
